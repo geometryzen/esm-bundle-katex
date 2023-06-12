@@ -1,0 +1,16 @@
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+coverage/
+docs/
+src/
+tests/
+types/
+.eslintignore
+.eslintrc
+.mocharc.json
+.nycrc.json
+jest.config.js
+register.js
+rollup.config.js
+tsconfig.json
+typedoc.json

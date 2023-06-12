@@ -1,0 +1,12 @@
+coverage/
+esm/
+system/
+dist/cjs/**/*.*
+dist/esm/**/*.*
+dist/system/**/*.*
+dist/umd/**/*.*
+dist/generated.index.d.ts
+docs/
+node_modules/
+types/
+!dist/index.d.ts

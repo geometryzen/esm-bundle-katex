@@ -1,0 +1,80 @@
+{
+    "name": "@geometryzen/katex",
+    "version": "0.0.0",
+    "description": "katex as an EcmaScript module or system module bundle",
+    "type": "module",
+    "exports": {
+        ".": {
+            "system": "./system/es2015/index.min.js",
+            "default": "./esm/es2015/index.min.js"
+        },
+        "./contrib/auto-render": {
+            "system": "./system/es2015/contrib/auto-render/index.min.js",
+            "default": "./esm/es2015/contrib/auto-render/index.min.js"
+        },
+        "./contrib/mhchem": {
+            "system": "./system/es2015/contrib/mhchem/index.min.js",
+            "default": "./esm/es2015/contrib/mhchem/index.min.js"
+        }
+    },
+    "files": [
+        "esm",
+        "system"
+    ],
+    "keywords": [
+        "katex",
+        "JavaScript"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "npm run clean && rollup --config rollup.config.mjs",
+        "check": "npx package-check",
+        "clean": "rm -rf dist && rm -rf esm && rm -rf system && rm -rf coverage && rm -rf docs && rm -rf types",
+        "coverage": "npm run test -- --coverage",
+        "dev": "rollup --config rollup.config.ts -w",
+        "docs": "npm run docs:typedoc && open-cli docs/index.html",
+        "docs:typedoc": "rm -rf docs && typedoc --options typedoc.json",
+        "lint": "eslint . --ext .ts",
+        "pages": "npm run docs:typedoc && gh-pages -d docs",
+        "pretest": "npm run build",
+        "prepublishOnly": "pnpm build",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geometryzen/katex.git"
+    },
+    "author": "David Geo Holmes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/geometryzen/katex/issues"
+    },
+    "homepage": "https://github.com/geometryzen/katex#readme",
+    "devDependencies": {
+        "@arkweid/lefthook": "0.7.7",
+        "@rollup/plugin-commonjs": "25.0.1",
+        "@rollup/plugin-node-resolve": "^15.1.0",
+        "@rollup/plugin-terser": "^0.4.3",
+        "@rollup/plugin-typescript": "^11.1.1",
+        "@skypack/package-check": "^0.2.2",
+        "@types/jest": "^29.5.2",
+        "@types/katex": "^0.16.0",
+        "@types/rollup-plugin-peer-deps-external": "2.2.1",
+        "@typescript-eslint/eslint-plugin": "^5.59.9",
+        "@typescript-eslint/parser": "^5.59.9",
+        "eslint": "^8.42.0",
+        "gh-pages": "^5.0.0",
+        "jest": "^29.5.0",
+        "katex": "^0.16.7",
+        "open-cli": "^7.2.0",
+        "rollup-plugin-dts": "^5.3.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "ts-jest": "^29.1.0",
+        "ts-jest-resolver": "^2.0.1",
+        "ts-node": "^10.9.1",
+        "typedoc": "^0.24.8",
+        "typescript": "^5.1.3"
+    }
+}
