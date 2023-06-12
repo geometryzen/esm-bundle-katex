@@ -13,7 +13,7 @@ const dependencyVersion = /[0-9.]+$/.exec(
  * @param target Either 'es5' or 'es2015'
  * @returns 
  */
-function createConfig(format, target, minify) {
+function createConfig(format: 'module' | 'system', target: 'es5' | 'es2015', minify: boolean) {
     const configDir = (format === "module" ? "esm" : format) + "/" + target;
     const plugins = [
         resolve({
@@ -46,7 +46,7 @@ function createConfig(format, target, minify) {
                 entryFileNames: `[name]${minify ? ".min" : ""}.js`,
                 chunkFileNames: `shared${minify ? ".min" : ""}.js`,
                 format,
-                // sourcemap: true,
+                sourcemap: true,
                 banner,
             }
         ],
