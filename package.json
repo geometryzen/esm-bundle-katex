@@ -1,6 +1,6 @@
 {
     "name": "@geometryzen/katex",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "katex as an EcmaScript module or system module bundle",
     "type": "module",
     "exports": {
